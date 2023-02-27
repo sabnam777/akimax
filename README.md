@@ -33,6 +33,30 @@ To run the bot, simply execute the following command:
 ```sh
 python main.py```
 
+
+## Variables
+
+<details>
+  <summary><b>See variables</b></summary>
+<br/>
+
+- `API_HASH` Your API Hash from my.telegram.org
+- `API_ID` Your API ID from my.telegram.org
+- `BOT_TOKEN` Your bot token from @BotFather
+
+</details>
+
+---
+
+
+##Contributing
+Contributions are welcome! Please create a pull request with your changes.
+
+##License
+This project is licensed under the MIT License.
+
+Feel free to customize the contents to better fit your project.
+
 ---
 
 ```
@@ -60,25 +84,3 @@ License -> https://github.com/Shinigamibots5/Donate/tree/main
 
 </details>
 
-## Variables
-
-<details>
-  <summary><b>See variables</b></summary>
-<br/>
-
-- `API_HASH` Your API Hash from my.telegram.org
-- `API_ID` Your API ID from my.telegram.org
-- `BOT_TOKEN` Your bot token from @BotFather
-
-</details>
-
----
-
-
-##Contributing
-Contributions are welcome! Please create a pull request with your changes.
-
-##License
-This project is licensed under the MIT License.
-
-Feel free to customize the contents to better fit your project.
