@@ -24,14 +24,14 @@ api_hash = YOUR_API_HASH
 bot_token = YOUR_BOT_TOKEN
 
 
-```Replace `YOUR_API_ID`, `YOUR_API_HASH`, and `YOUR_BOT_TOKEN` with your own values.
+```Replace `YOUR_API_ID`, `YOUR_API_HASH`, and `YOUR_BOT_TOKEN` with your own values.```
 
 ## Usage
 
 To run the bot, simply execute the following command:
 
-```sh
-python main.py```
+
+python main.p```
 
 
 ## Variables
@@ -46,7 +46,6 @@ python main.py```
 
 </details>
 
----
 
 
 ##Contributing
@@ -57,16 +56,8 @@ This project is licensed under the MIT License.
 
 Feel free to customize the contents to better fit your project.
 
----
 
-```
-Made with Python3
-(C) @Bae_wafaaa
-Copyright permission under MIT License
-License -> https://github.com/Shinigamibots5/Donate/tree/main
-```
 ---
-
 <br/>
 
 <h3 align="center">
