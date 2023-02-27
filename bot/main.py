@@ -104,9 +104,19 @@ owner_id = "5143506371"
 
 @bot.on_message(filters.command("broadcast") & filters.user(owner_id))
 def broadcast(bot, update):
-    # Add your broadcast code here
-    pass
+    message = update.text.split("/broadcast ", maxsplit=1)[1]
+    all_chats = bot.get_dialogs()
+    for chat in all_chats:
+        try:
+            bot.send_message(chat.id, message)
+        except:
+            pass
 
+    bot.send_message(
+        chat_id=update.chat.id,
+        text=f"Broadcast message sent to {len(all_chats)} chats"
+    )
 
 # Start the bot
 bot.run()
+
