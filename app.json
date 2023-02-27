@@ -6,45 +6,46 @@
   "image": "heroku/python",
   
   "env": {
-  "BOT_TOKEN": {
-    "description": "The Telegram API token of the bot",
-    "values": "5932409230:AAEDKc0qnKR57rNXNWvu6cxmqAzZCAklhx4",
-    "required": true
-  },
+    "BOT_TOKEN": {
+      "description": "The Telegram API token of the bot",
+      "value": "5932409230:AAEDKc0qnKR57rNXNWvu6cxmqAzZCAklhx4",
+      "required": true
+    },
     "API_ID": {
       "description": "Your Telegram API ID",
-      "values": "18576653",
+      "value": "18576653",
       "required": true
     },
     "API_HASH": {
       "description": "Your Telegram API hash",
-      "values": "d29fa01d174ec2ac0d5bd415f052d173",
+      "value": "d29fa01d174ec2ac0d5bd415f052d173",
       "required": true
     },
     "OWNER_ID": {
       "description": "The Telegram ID of the bot owner",
-      "values": "5143506371",
+      "value": "5143506371",
       "required": true
     },
     "DONATION_LINK": {
-    "description": "Link for donation button",
-    "values": "",
-    "required": false
+      "description": "Link for donation button",
+      "value": "",
+      "required": false
     },
     "BUY_PREMIUM_LINK": {
-    "description": "Link for buying premium",
-    "values": "",
-    "required": false
+      "description": "Link for buying premium",
+      "value": "",
+      "required": false
     },
     "BROADCAST_GROUPS": {
-    "description": "List of Telegram group IDs where the bot can broadcast messages",
-    "values": "",
-    "required": false
-  }
- },
-    "buildpacks": [
-        {
-            "url": "heroku/python"
-        }
-    ]
+      "description": "List of Telegram group IDs where the bot can broadcast messages",
+      "value": "",
+      "required": false
+    }
+  },
+  
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
 }
