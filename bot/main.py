@@ -66,13 +66,15 @@ def donate(bot, update):
     ])
 
     photo_url = "https://te.legra.ph/file/df563479fb5ea116bb55b.jpg"
-    caption = f"🌟 To keep AK-IMAX alive, we need your help through monthly donations.\n"\
-              f"This is necessary to cover the costs of admin and bot hosting servers to provide 24/7 service.\n"\
-              f"We have always strived to offer our services for free, but now we need your support to maintain it.\n\n"\
-              f"💰 The minimum donation amount is Rs. 3/-, and we appreciate any contribution you can make to keep AK-IMAX running.\n"\
-              f"If you would like to donate, please send a screenshot of your donation to our group and also send us a message.\n\n"\
-              f"🙏🏻 Thank you for considering joining the AK-IMAX family and supporting our cause."
+    caption = f"🌟 To keep AK-IMAX alive, we need your help through monthly donations.\n"
+              f"This is necessary to cover the costs of admin and bot hosting servers to provide 24/7 service.\n" 
+              f"We have always strived to offer our services for free, but now we need your support to maintain it.\n\n" \
 
+              f"💰 The minimum donation amount is Rs. 3/-, and we appreciate any contribution you can make to keep AK-IMAX running.\n"
+              f"If you want to donate, please join our Screenshot Group (https://t.me/AKImaxPremium1) and send us a message.\n\n" \
+
+              f"🙏🏻 Thank you for considering joining the AK-IMAX family and supporting our cause."
+                
     bot.send_photo(
         chat_id=chat_id,
         photo=photo_url,
@@ -82,7 +84,7 @@ def donate(bot, update):
 
 @bot.on_callback_query(filters.regex("UPI"))
 def upi_buttons(bot, update):
-    chat_id = update.callback_query.message.chat.id
+    chat_id = update.message.chat.id  # use update.message here
 
     markup = InlineKeyboardMarkup([
         [InlineKeyboardButton("UPI - newprime@ybl", url="upi://pay?pa=newprime@ybl")],
@@ -93,10 +95,11 @@ def upi_buttons(bot, update):
         chat_id=chat_id,
         photo="https://te.legra.ph/file/69d562d0f34f8b92cf904.jpg",
         reply_markup=markup
-    )
+        
     bot.send_message(
         chat_id=chat_id,
-        text="Choose the UPI ID to donate:"
+        text="Choose the UPI ID to donate:",
+        reply_markup=markup
     )
 
 # Broadcast feature for owner
