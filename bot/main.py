@@ -19,11 +19,11 @@ def start(bot, update):
 
     markup = InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("Join our group", url="t.me/akimax0"),
-            InlineKeyboardButton("Join our channel", url="t.me/Akimaxmovies01")
+            InlineKeyboardButton("⚡️AK Imax 2.0⚡️", url="t.me/akimax0"),
+            InlineKeyboardButton("⚡️AK IMAX MOVIES⚡️", url="t.me/Akimaxmovies01")
         ],
         [InlineKeyboardButton("Premium", callback_data="premium")],
-        [InlineKeyboardButton("Donate", callback_data="donate")]
+        [InlineKeyboardButton("Donate 💳", callback_data="donate")]
     ])
 
     photo_url = "https://te.legra.ph/file/6750eaff7ac29676dbb31.jpg"
@@ -41,7 +41,7 @@ def premium(bot, update):
     chat_id = update.message.chat.id
 
     markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Join premium group", url="t.me/your_premium_group")]
+        [InlineKeyboardButton("Join premium group", url="https://t.me/AKImaxPremium1")]
     ])
 
     photo_url = "https://te.legra.ph/file/a92e3ce02ed084795a865.jpg"
@@ -53,6 +53,8 @@ def premium(bot, update):
         reply_markup=markup
     )
 
+
+
 # Donation page
 @bot.on_callback_query(filters.regex("donate"))
 def donate(bot, update):
@@ -60,17 +62,41 @@ def donate(bot, update):
 
     markup = InlineKeyboardMarkup([
         [InlineKeyboardButton("Paytm", url="https://paytm.me/your_paytm_link")],
-        [InlineKeyboardButton("UPI", url="upi://pay?pa=newprime@ybl")],
-        [InlineKeyboardButton("PhonePe", url="https://www.phonepe.com/en/")]
+        [InlineKeyboardButton("UPI", callback_data="UPI")]
     ])
 
-    photo_url = "https://te.legra.ph/file/d9c29bfcfdaff38eb8a3a.jpg"
-    caption = "Thank you for your donation!"
+    photo_url = "https://te.legra.ph/file/df563479fb5ea116bb55b.jpg"
+    caption = f"🌟 To keep AK-IMAX alive, we need your help through monthly donations.\n"\
+              f"This is necessary to cover the costs of admin and bot hosting servers to provide 24/7 service.\n"\
+              f"We have always strived to offer our services for free, but now we need your support to maintain it.\n\n"\
+              f"💰 The minimum donation amount is Rs. 3/-, and we appreciate any contribution you can make to keep AK-IMAX running.\n"\
+              f"If you would like to donate, please send a screenshot of your donation to our group and also send us a message.\n\n"\
+              f"🙏🏻 Thank you for considering joining the AK-IMAX family and supporting our cause."
+
     bot.send_photo(
         chat_id=chat_id,
         photo=photo_url,
         caption=caption,
         reply_markup=markup
+    )
+
+@bot.on_callback_query(filters.regex("UPI"))
+def upi_buttons(bot, update):
+    chat_id = update.callback_query.message.chat.id
+
+    markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton("UPI - newprime@ybl", url="upi://pay?pa=newprime@ybl")],
+        [InlineKeyboardButton("UPI - k786amir@paytm", url="upi://pay?pa=k786amir@paytm")]
+    ])
+
+    bot.send_photo(
+        chat_id=chat_id,
+        photo="https://te.legra.ph/file/69d562d0f34f8b92cf904.jpg",
+        reply_markup=markup
+    )
+    bot.send_message(
+        chat_id=chat_id,
+        text="Choose the UPI ID to donate:"
     )
 
 # Broadcast feature for owner
