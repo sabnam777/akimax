@@ -6,9 +6,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # Create bot instance
 bot = Client(
     "Donate",
-    bot_token=os.environ["5932409230:AAEDKc0qnKR57rNXNWvu6cxmqAzZCAklhx4"],
-    api_id=int(os.environ["18576653"]),
-    api_hash=os.environ["d29fa01d174ec2ac0d5bd415f052d173"]
+    bot_token=os.environ["BOT_TOKEN"],
+    api_id=int(os.environ["API_ID"]),
+    api_hash=os.environ["API_HASH"]
 )
 
 # Define home page with three buttons
