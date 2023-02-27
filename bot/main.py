@@ -6,9 +6,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # Create bot instance
 bot = Client(
     "Donate",
-    bot_token=os.environ["BOT_TOKEN"],
-    api_id=int(os.environ["API_ID"]),
-    api_hash=os.environ["API_HASH"]
+    bot_token=os.environ["5932409230:AAEDKc0qnKR57rNXNWvu6cxmqAzZCAklhx4"],
+    api_id=int(os.environ["18576653"]),
+    api_hash=os.environ["d29fa01d174ec2ac0d5bd415f052d173"]
 )
 
 # Define home page with three buttons
@@ -19,8 +19,8 @@ def start(bot, update):
 
     markup = InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("Join our group", url="t.me/your_group"),
-            InlineKeyboardButton("Join our channel", url="t.me/your_channel")
+            InlineKeyboardButton("Join our group", url="t.me/akimax0"),
+            InlineKeyboardButton("Join our channel", url="t.me/Akimaxmovies01")
         ],
         [InlineKeyboardButton("Premium", callback_data="premium")],
         [InlineKeyboardButton("Donate", callback_data="donate")]
@@ -59,9 +59,9 @@ def donate(bot, update):
     chat_id = update.message.chat.id
 
     markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Pay with Paytm", url="https://paytm.me/your_paytm_link")],
-        [InlineKeyboardButton("Pay with UPI", url="upi://pay?pa=your_upi_id")],
-        [InlineKeyboardButton("Pay with PhonePe", url="https://www.phonepe.com/en/")]
+        [InlineKeyboardButton("Paytm", url="https://paytm.me/your_paytm_link")],
+        [InlineKeyboardButton("UPI", url="upi://pay?pa=newprime@ybl")],
+        [InlineKeyboardButton("PhonePe", url="https://www.phonepe.com/en/")]
     ])
 
     photo_url = "https://te.legra.ph/file/d9c29bfcfdaff38eb8a3a.jpg"
@@ -74,7 +74,7 @@ def donate(bot, update):
     )
 
 # Broadcast feature for owner
-owner_id = "1234567890"
+owner_id = "5143506371"
 
 @bot.on_message(filters.command("broadcast") & filters.user(owner_id))
 def broadcast(bot, update):
