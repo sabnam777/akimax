@@ -4,14 +4,7 @@
   "repository": "https://github.com/sabnam777/akimax",
   "keywords": ["keyword1", "keyword2"],
   "image": "heroku/python",
-  "addons": [
-    "heroku-postgresql"
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ],
+  
   "env": {
   "BOT_TOKEN": {
     "description": "The Telegram API token of the bot",
