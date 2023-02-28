@@ -66,7 +66,8 @@ def donate(bot, update):
     ])
 
     photo_url = "https://te.legra.ph/file/df563479fb5ea116bb55b.jpg"
-    caption = f"🌟 To keep AK-IMAX alive, we need your help through monthly donations.\n"
+    caption =(
+              f"🌟 To keep AK-IMAX alive, we need your help through monthly donations.\n"
               f"This is necessary to cover the costs of admin and bot hosting servers to provide 24/7 service.\n" 
               f"We have always strived to offer our services for free, but now we need your support to maintain it.\n\n" \
 
@@ -74,6 +75,7 @@ def donate(bot, update):
               f"If you want to donate, please join our Screenshot Group (https://t.me/AKImaxPremium1) and send us a message.\n\n" \
 
               f"🙏🏻 Thank you for considering joining the AK-IMAX family and supporting our cause."
+    )
                 
     bot.send_photo(
         chat_id=chat_id,
