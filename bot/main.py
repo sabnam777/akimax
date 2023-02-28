@@ -85,24 +85,38 @@ def donate(bot, update):
     )
 
 @bot.on_callback_query(filters.regex("UPI"))
-def upi_buttons(bot, update):
-    chat_id = update.message.chat.id  # use update.message here
+def upi_buttons(update, context):
+    chat_id = update.effective_chat.id
+    message_id = update.message.message_id
 
-    markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("UPI - newprime@ybl", url="upi://pay?pa=newprime@ybl")],
-        [InlineKeyboardButton("UPI - k786amir@paytm", url="upi://pay?pa=k786amir@paytm")]
+    # create a reply markup with inline keyboard
+    reply_markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Google Pay", url="https://gpay.app/...")],
+        [InlineKeyboardButton("Paytm", url="https://paytm.com/...")]
     ])
 
+    try:
+        # send the photo with the reply markup
+        bot.send_photo(chat_id=chat_id, photo=upi_photo_url, reply_markup=reply_markup)
+    except pyrogram.errors.exceptions.bad_request_400.ButtonUrlInvalid as e:
+        # log the error and the value of the button URL
+        logger.error(f"Button URL is invalid: {e}")
+        logger.debug(f"Button URL value: {reply_markup.inline_keyboard[0][0].url}")
+    
+    # acknowledge the update
+    context.bot.delete_message(chat_id=chat_id, message_id=message_id)
+
+    # send photo and message with the same reply markup
     bot.send_photo(
         chat_id=chat_id,
         photo="https://te.legra.ph/file/69d562d0f34f8b92cf904.jpg",
-        reply_markup=markup
+        reply_markup=reply_markup
     )
     
     bot.send_message(
         chat_id=chat_id,
         text="Choose the UPI ID to donate:",
-        reply_markup=markup
+        reply_markup=reply_markup
     )
 
 # Broadcast feature for owner
