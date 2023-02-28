@@ -86,7 +86,7 @@ def donate(bot, update):
 
 @bot.on_callback_query(filters.regex("UPI"))
 def upi_buttons(update, context):
-    chat_id = update.effective_chat.id
+    chat_id = update.message.chat.id
     message_id = update.message.message_id
 
     # create a reply markup with inline keyboard
@@ -106,17 +106,17 @@ def upi_buttons(update, context):
     # acknowledge the update
     context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
-    # send photo and message with the same reply markup
+
     bot.send_photo(
         chat_id=chat_id,
         photo="https://te.legra.ph/file/69d562d0f34f8b92cf904.jpg",
-        reply_markup=reply_markup
+        reply_markup=markup
     )
     
     bot.send_message(
         chat_id=chat_id,
         text="Choose the UPI ID to donate:",
-        reply_markup=reply_markup
+        reply_markup=markup
     )
 
 # Broadcast feature for owner
